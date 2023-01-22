@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import React from 'react';
+import x from 'icons/money.svg';
+
+console.log(x);
 
 const NavWrapper = styled.div` 
   line-height: 24px;
@@ -20,6 +23,9 @@ const Nav = ()=>{
         <NavWrapper>
           <ul>
             <li>
+              <svg>
+                <use xlinkHref='#money' />
+              </svg>
               <Link to="/tags">标签页</Link>
             </li>
             <li>
