@@ -1,5 +1,5 @@
 {
-  "name": "morney-13",
+  "name": "morney-1",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -125,7 +125,7 @@
       "^.+\\.module\\.(css|sass|scss)$"
     ],
     "modulePaths": [
-      "D:\\Fang\\Jirengu\\morney-13\\src"
+      "C:\\Users\\root\\Desktop\\project\\reactwc\\morney-1\\src"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
