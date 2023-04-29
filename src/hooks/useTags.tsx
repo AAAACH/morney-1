@@ -1,6 +1,6 @@
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {createId} from 'lib/createId';
-import {useUpdate} from './hooks/useUpdate';
+import {useUpdate} from './useUpdate';
 
 
 
@@ -22,7 +22,7 @@ const useTags = () => {
   }, []); // 组件挂载时执行
   useUpdate(() => {
     window.localStorage.setItem('tags', JSON.stringify(tags));
-  }, [tags]);
+  }, tags);
 
   const findTag = (id: number) => tags.filter(tag => tag.id === id)[0];
   const findTagIndex = (id: number) => {
@@ -47,7 +47,13 @@ const useTags = () => {
       setTags([...tags, {id: createId(), name: tagName}]);
     }
   };
-  return{tags, addTag, setTags, findTag, updateTag, findTagIndex, deleteTag};
+
+  const getName = (id: number) => {
+    const tag = tags.filter(t => t.id === id)[0];
+    return tag ? tag.name : '';
+  };
+
+  return{tags, getName, addTag, setTags, findTag, updateTag, findTagIndex, deleteTag};
 };
 
 export {useTags};
